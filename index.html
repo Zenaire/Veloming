@@ -24,27 +24,21 @@
 <body
   class="bg-white text-gray-900 antialiased min-h-screen flex flex-col justify-between selection:bg-blue-100 selection:text-blue-700">
 
+
   <!-- ==================== NAVBAR ==================== -->
   <header class="w-full bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100">
     <div class="w-full px-6 sm:px-10 lg:px-14 xl:px-16 h-16 sm:h-20 flex items-center justify-between">
 
       <!-- Brand Logo -->
-      <a href="#" class="flex items-center gap-2 group transition">
-        <div
-          class="w-7 h-7 flex items-center justify-content text-gray-900 group-hover:text-blue-600 transition-colors">
-          <!-- Origami paper plane / kite mark -->
-          <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
-            <path d="M2.5 19.5L21.5 12L2.5 4.5L5.5 12L2.5 19.5Z" />
-          </svg>
-        </div>
-        <span class="text-lg font-bold tracking-tight text-gray-950">Veloming</span>
+      <a href="index.html" class="inline-flex items-center transition hover:opacity-85">
+        <img src="./Veloming.png" alt="Veloming" class="h-7 sm:h-8 w-auto object-contain" />
       </a>
 
       <!-- Desktop Navigation Menu -->
       <nav class="hidden md:flex items-center gap-8 ml-auto text-xs sm:text-sm font-medium">
-        <a href="#" class="text-gray-900 hover:text-blue-600 transition-colors">Beranda</a>
+        <a href="index.html" class="text-gray-900 hover:text-blue-600 transition-colors">Beranda</a>
         <a href="report.html" class="text-gray-500 hover:text-blue-600 transition-colors">Lapor</a>
-        <a href="#lacak" class="text-gray-500 hover:text-blue-600 transition-colors">Lacak Laporan</a>
+        <a href="track.html" class="text-gray-500 hover:text-blue-600 transition-colors">Lacak Laporan</a>
       </nav>
 
       <!-- Tablet & Mobile Menu Button -->
@@ -63,7 +57,8 @@
     <div id="mobile-menu"
       class="hidden md:hidden border-t border-gray-100 bg-white px-6 pt-3 pb-5 space-y-2.5 text-center shadow-lg transition-all duration-200">
       <a href="#" class="block py-2 text-sm font-medium text-gray-900 hover:text-blue-600 rounded-lg">Beranda</a>
-      <a href="report.html" class="block py-2 text-sm font-medium text-gray-600 hover:text-blue-600 rounded-lg">Lapor</a>
+      <a href="report.html"
+        class="block py-2 text-sm font-medium text-gray-600 hover:text-blue-600 rounded-lg">Lapor</a>
       <a href="#lacak" class="block py-2 text-sm font-medium text-gray-600 hover:text-blue-600 rounded-lg">Lacak
         Laporan</a>
     </div>
@@ -238,61 +233,61 @@
     </section>
 
     <!-- ==================== STATISTICS SECTION ==================== -->
-<section class="py-16 sm:py-20 w-full px-4 text-center">
+    <section class="py-16 sm:py-20 w-full px-4 text-center">
 
-  <!-- Section Title -->
-  <h2 class="text-2xl sm:text-3xl font-bold text-gray-950 tracking-tight mb-8 sm:mb-10">
-    Transparansi dalam Angka
-  </h2>
+      <!-- Section Title -->
+      <h2 class="text-2xl sm:text-3xl font-bold text-gray-950 tracking-tight mb-8 sm:mb-10">
+        Transparansi dalam Angka
+      </h2>
 
-  <!-- Container Grid: KUNCI lebar di max-w-3xl mx-auto -->
-  <div class="w-full max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Container Grid: KUNCI lebar di max-w-3xl mx-auto -->
+      <div class="w-full max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
 
-    <!-- Stat Item 1 -->
-    <div class="bg-white border border-gray-200 rounded-2xl py-8 px-4 flex flex-col items-center justify-center">
-      <p class="text-3xl md:text-4xl font-semibold text-gray-950 tracking-tight leading-none">
-        12.847
+        <!-- Stat Item 1 -->
+        <div class="bg-white border border-gray-200 rounded-2xl py-8 px-4 flex flex-col items-center justify-center">
+          <p class="text-3xl md:text-4xl font-semibold text-gray-950 tracking-tight leading-none">
+            12.847
+          </p>
+          <p class="text-xs sm:text-sm text-gray-500 mt-2.5 font-normal">
+            Laporan Diterima
+          </p>
+        </div>
+
+        <!-- Stat Item 2 -->
+        <div class="bg-white border border-gray-200 rounded-2xl py-8 px-4 flex flex-col items-center justify-center">
+          <p class="text-3xl md:text-4xl font-semibold text-gray-950 tracking-tight leading-none">
+            89%
+          </p>
+          <p class="text-xs sm:text-sm text-gray-500 mt-2.5 font-normal">
+            Tingkat Respon
+          </p>
+        </div>
+
+        <!-- Stat Item 3 -->
+        <div class="bg-white border border-gray-200 rounded-2xl py-8 px-4 flex flex-col items-center justify-center">
+          <p class="text-3xl md:text-4xl font-semibold text-gray-950 tracking-tight leading-none">
+            6.214
+          </p>
+          <p class="text-xs sm:text-sm text-gray-500 mt-2.5 font-normal">
+            Masalah Terselesaikan
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Action note & CTA button -->
+      <p class="mt-10 sm:mt-12 text-xs sm:text-sm text-gray-500">
+        Bergabunglah dengan ribuan warga yang telah menggunakan Veloming.
       </p>
-      <p class="text-xs sm:text-sm text-gray-500 mt-2.5 font-normal">
-        Laporan Diterima
-      </p>
-    </div>
 
-    <!-- Stat Item 2 -->
-    <div class="bg-white border border-gray-200 rounded-2xl py-8 px-4 flex flex-col items-center justify-center">
-      <p class="text-3xl md:text-4xl font-semibold text-gray-950 tracking-tight leading-none">
-        89%
-      </p>
-      <p class="text-xs sm:text-sm text-gray-500 mt-2.5 font-normal">
-        Tingkat Respon
-      </p>
-    </div>
+      <div class="mt-4 flex justify-center">
+        <a href="report.html"
+          class="inline-flex items-center justify-center px-6 py-2.5 text-xs sm:text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 active:scale-95 rounded-full transition-all duration-150">
+          Lapor sekarang
+        </a>
+      </div>
 
-    <!-- Stat Item 3 -->
-    <div class="bg-white border border-gray-200 rounded-2xl py-8 px-4 flex flex-col items-center justify-center">
-      <p class="text-3xl md:text-4xl font-semibold text-gray-950 tracking-tight leading-none">
-        6.214
-      </p>
-      <p class="text-xs sm:text-sm text-gray-500 mt-2.5 font-normal">
-        Masalah Terselesaikan
-      </p>
-    </div>
-
-  </div>
-
-  <!-- Action note & CTA button -->
-  <p class="mt-10 sm:mt-12 text-xs sm:text-sm text-gray-500">
-    Bergabunglah dengan ribuan warga yang telah menggunakan Veloming.
-  </p>
-
-  <div class="mt-4 flex justify-center">
-    <a href="report.html"
-      class="inline-flex items-center justify-center px-6 py-2.5 text-xs sm:text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 active:scale-95 rounded-full transition-all duration-150">
-      Lapor sekarang
-    </a>
-  </div>
-
-</section>
+    </section>
 
   </main>
 

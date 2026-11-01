@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lacak Laporan - Veloming</title>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+
+    <!-- Tailwind CSS Output -->
+    <link rel="stylesheet" href="./dist/output.css" />
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-white text-gray-900 antialiased min-h-screen flex flex-col justify-between selection:bg-blue-100 selection:text-blue-700">
+
+
+    <!-- ==================== NAVBAR ==================== -->
+    <header class="w-full bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100">
+        <div class="w-full px-6 sm:px-10 lg:px-14 xl:px-16 h-16 sm:h-20 flex items-center justify-between">
+
+            <!-- Brand Logo -->
+            <a href="index.html" class="inline-flex items-center transition hover:opacity-85">
+                <img src="./Veloming.png" alt="Veloming" class="h-7 sm:h-8 w-auto object-contain" />
+            </a>
+
+            <!-- Desktop Navigation Menu -->
+            <nav class="hidden md:flex items-center gap-8 ml-auto text-xs sm:text-sm font-medium">
+                <a href="index.html" class="text-gray-900 hover:text-blue-600 transition-colors">Beranda</a>
+                <a href="report.html" class="text-gray-500 hover:text-blue-600 transition-colors">Lapor</a>
+                <a href="track.html" class="text-gray-500 hover:text-blue-600 transition-colors">Lacak Laporan</a>
+            </nav>
+
+            <!-- Tablet & Mobile Menu Button -->
+            <div class="md:hidden flex items-center">
+                <button id="mobile-menu-toggle" type="button"
+                    class="p-2 text-gray-700 hover:text-gray-950 focus:outline-none"
+                    aria-label="Toggle Navigation Menu">
+                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M7 16h13" />
+                    </svg>
+                </button>
+            </div>
+
+        </div>
+        <!-- ==================== MAIN CONTENT ==================== -->
+        <main class="flex-1 w-full py-12 sm:py-16 px-4">
+
+            <!-- Kontainer Tengah Utama -->
+            <div class="w-full max-w-2xl mx-auto">
+
+                <!-- Header Section -->
+                <div class="text-center mb-10">
+                    <h1 class="text-3xl sm:text-[36px] font-bold text-gray-950 tracking-tight leading-tight">
+                        Lacak Laporan
+                    </h1>
+                    <p class="mt-3 text-sm text-gray-500 font-normal">
+                        Masukkan ID Laporan Anda untuk melihat status dan progres.
+                    </p>
+                </div>
+
+                <!-- Search Box Section -->
+                <div class="w-full max-w-xl mx-auto mb-14">
+                    <form class="flex items-center gap-3">
+                        <div class="relative flex-1">
+                            <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400">
+                                <!-- Search Icon -->
+                                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                </svg>
+                            </span>
+                            <input type="text" required placeholder="Contoh: VLM-2026-042"
+                                class="w-full pl-10 pr-4 py-2.5 text-sm bg-white border border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors" />
+                        </div>
+                        <button type="submit"
+                            class="px-6 py-2.5 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 active:scale-95 rounded-lg shadow-sm transition-all duration-150">
+                            Cari
+                        </button>
+                    </form>
+                    <p class="text-center text-xs text-gray-400 mt-4">
+                        Masukkan ID Laporan untuk melacak status.
+                    </p>
+                </div>
+
+                <!-- Laporan Publik Terkini List -->
+                <div>
+                    <h2 class="text-sm font-bold text-gray-950 mb-4 px-1">Laporan Publik Terkini</h2>
+
+                    <!-- Cards Container -->
+                    <div class="space-y-3">
+
+                        <!-- Item 1 -->
+                        <div
+                            class="bg-white border border-gray-200/80 rounded-2xl p-4 sm:p-5 flex justify-between items-center shadow-sm">
+                            <div class="flex flex-col">
+                                <span class="text-[13px] sm:text-sm font-bold text-gray-950">VLM-2026-042</span>
+                                <span class="text-[11px] sm:text-xs text-gray-500 mt-0.5">Infrastruktur jalan</span>
+                            </div>
+                            <!-- Pill Diproses (Blue) -->
+                            <span
+                                class="inline-flex items-center px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-semibold bg-blue-50 text-blue-600">
+                                Diproses
+                            </span>
+                        </div>
+
+                        <!-- Item 2 -->
+                        <div
+                            class="bg-white border border-gray-200/80 rounded-2xl p-4 sm:p-5 flex justify-between items-center shadow-sm">
+                            <div class="flex flex-col">
+                                <span class="text-[13px] sm:text-sm font-bold text-gray-950">VLM-2026-043</span>
+                                <span class="text-[11px] sm:text-xs text-gray-500 mt-0.5">Penerangan jalan</span>
+                            </div>
+                            <!-- Pill Selesai (Green) -->
+                            <span
+                                class="inline-flex items-center px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-semibold bg-green-50 text-green-600">
+                                Selesai
+                            </span>
+                        </div>
+
+                        <!-- Item 3 -->
+                        <div
+                            class="bg-white border border-gray-200/80 rounded-2xl p-4 sm:p-5 flex justify-between items-center shadow-sm">
+                            <div class="flex flex-col">
+                                <span class="text-[13px] sm:text-sm font-bold text-gray-950">VLM-2026-043</span>
+                                <span class="text-[11px] sm:text-xs text-gray-500 mt-0.5">Kebersihan & sampah</span>
+                            </div>
+                            <!-- Pill Diterima (Gray) -->
+                            <span
+                                class="inline-flex items-center px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-semibold bg-gray-100 text-gray-600">
+                                Diterima
+                            </span>
+                        </div>
+
+                        <!-- Item 4 -->
+                        <div
+                            class="bg-white border border-gray-200/80 rounded-2xl p-4 sm:p-5 flex justify-between items-center shadow-sm">
+                            <div class="flex flex-col">
+                                <span class="text-[13px] sm:text-sm font-bold text-gray-950">VLM-2026-045</span>
+                                <span class="text-[11px] sm:text-xs text-gray-500 mt-0.5">Drainase & saluran air</span>
+                            </div>
+                            <!-- Pill Diproses (Blue) -->
+                            <span
+                                class="inline-flex items-center px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-semibold bg-blue-50 text-blue-600">
+                                Diproses
+                            </span>
+                        </div>
+
+                        <!-- Item 5 -->
+                        <div
+                            class="bg-white border border-gray-200/80 rounded-2xl p-4 sm:p-5 flex justify-between items-center shadow-sm">
+                            <div class="flex flex-col">
+                                <span class="text-[13px] sm:text-sm font-bold text-gray-950">VLM-2026-046</span>
+                                <span class="text-[11px] sm:text-xs text-gray-500 mt-0.5">Lainnya</span>
+                            </div>
+                            <!-- Pill Ditolak (Red) -->
+                            <span
+                                class="inline-flex items-center px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-semibold bg-red-50 text-red-600">
+                                Ditolak
+                            </span>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        <!-- ==================== FOOTER ==================== -->
+        <footer class="mt-16 sm:mt-24 border-t border-gray-100 py-8">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <p class="text-[11px] sm:text-xs text-gray-400 font-normal">
+                    &copy; 2026 Veloming. Platform Pelaporan Warga untuk Transparansi Publik.
+                </p>
+            </div>
+        </footer>
+
+        <!-- Scripts -->
+        <script>
+            const menuBtn = document.getElementById('mobile-menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+        </script>
+</body>
+
+</html>
