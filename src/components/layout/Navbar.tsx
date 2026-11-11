@@ -17,11 +17,29 @@ export const Navbar: React.FC = () => {
     return location.pathname.startsWith(path);
   };
 
+  // Scroll to hero section smoothly when on homepage, or navigate to '/'
+  const handleScrollToHero = (e: React.MouseEvent) => {
+    if (location.pathname === '/') {
+      e.preventDefault();
+      const heroEl = document.getElementById('hero');
+      if (heroEl) {
+        heroEl.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
     <header className="w-full bg-[var(--background-bg-primary)]/90 backdrop-blur-md sticky top-0 z-50 border-b border-[var(--border-border-secondary)]">
       <div className="max-w-[1392px] mx-auto px-6 h-16 flex items-center justify-between">
-        {/* Brand Logo */}
-        <Link to="/" className="inline-flex items-center transition hover:opacity-90">
+        {/* Brand Logo - clicks scroll to hero section */}
+        <Link
+          to="/"
+          onClick={handleScrollToHero}
+          className="inline-flex items-center transition hover:opacity-90 cursor-pointer"
+          aria-label="Kembali ke Beranda"
+        >
           <VelomingLogo variant="combination" size={36} animated={true} />
         </Link>
 
@@ -31,6 +49,9 @@ export const Navbar: React.FC = () => {
             <Link
               key={link.path}
               to={link.path}
+              onClick={(e) => {
+                if (link.path === '/') handleScrollToHero(e);
+              }}
               className={`transition-colors font-medium ${
                 isActive(link.path)
                   ? 'text-[var(--text-text-gray-text-primary)] font-semibold'
@@ -47,7 +68,7 @@ export const Navbar: React.FC = () => {
           <button
             type="button"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="p-2 text-[var(--text-text-gray-text-primary)] hover:text-blue-600 focus:outline-none"
+            className="p-2 text-[var(--text-text-gray-text-primary)] hover:text-blue-600 focus:outline-none cursor-pointer"
             aria-label="Toggle Navigation Menu"
           >
             <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -68,7 +89,10 @@ export const Navbar: React.FC = () => {
             <Link
               key={link.path}
               to={link.path}
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={(e) => {
+                setIsMobileMenuOpen(false);
+                if (link.path === '/') handleScrollToHero(e);
+              }}
               className={`block py-2.5 text-sm font-medium rounded-lg ${
                 isActive(link.path)
                   ? 'text-[var(--text-text-gray-text-primary)] bg-[var(--background-bg-secondary)] font-semibold'

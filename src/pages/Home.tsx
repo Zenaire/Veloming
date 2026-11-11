@@ -1,85 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'motion/react';
 import { Plus, Search, Check } from 'lucide-react';
-import { TicketView } from '../components/common/TicketView';
+import { HeroSection } from '../components/common/HeroSection';
 
 export const Home: React.FC = () => {
   return (
     <div className="flex flex-col w-full bg-[var(--background-bg-primary)] text-[var(--text-text-gray-text-primary)]">
       {/* ========================================================================= */}
       {/* SECTION 1: HERO SECTION                                                   */}
-      {/* Figma Frame: [4032:49] Container:margin (1440x889)                        */}
       {/* ========================================================================= */}
-      <section className="pt-12 sm:pt-16 md:pt-20 pb-16 sm:pb-20 w-full px-6 max-w-[1392px] mx-auto text-center flex flex-col items-center">
-        {/* Eyebrow: Platform Pelaporan Warga */}
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-          className="text-sm font-normal text-[var(--text-text-gray-text-tertiary)] mb-3 tracking-normal"
-        >
-          Platform Pelaporan Warga
-        </motion.p>
-
-        {/* Main Heading */}
-        <motion.h1
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-3xl sm:text-4xl md:text-[56px] font-semibold text-[var(--text-text-gray-text-primary)] tracking-tight leading-[1.18] sm:leading-[1.15] max-w-3xl"
-        >
-          Suara Anda,<br />Tindak Lanjut Nyata.
-        </motion.h1>
-
-        {/* Description Paragraph */}
-        <motion.p
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-4 sm:mt-5 text-sm sm:text-base md:text-[20px] text-[var(--text-text-gray-text-tertiary)] max-w-[580px] leading-relaxed"
-        >
-          Laporkan masalah fasilitas publik dalam hitungan detik. Lacak progresnya secara transparan dengan ID Laporan.
-        </motion.p>
-
-        {/* CTA Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="mt-7 sm:mt-8 flex flex-row items-center justify-center gap-4 w-full"
-        >
-          <Link
-            to="/report"
-            className="inline-flex items-center justify-center w-40 sm:w-44 h-12 text-sm sm:text-base font-semibold text-white bg-[var(--background-bg-brand-solid)] hover:bg-[var(--background-bg-brand-solid-hover)] active:scale-95 rounded-full shadow-sm hover:shadow transition-all duration-150"
-          >
-            Lapor sekarang
-          </Link>
-          <Link
-            to="/track"
-            className="inline-flex items-center justify-center w-40 sm:w-44 h-12 text-sm sm:text-base font-semibold text-[var(--background-bg-brand-solid)] hover:bg-blue-50/70 border border-[#64A2E0] active:scale-95 rounded-full transition-all duration-150 bg-white"
-          >
-            Lacak laporan
-          </Link>
-        </motion.div>
-
-        {/* ========================================================================= */}
-        {/* HERO FLOATING STATUS CARD (TicketView - Figma Node 4127:17424)           */}
-        {/* ========================================================================= */}
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-12 sm:mt-14 w-full max-w-[580px]"
-        >
-          <TicketView
-            id="VLM-2026-042"
-            status="Diterima"
-            category="Infrastruktur Jalan"
-            location="Jl. Margonda Raya"
-          />
-        </motion.div>
-      </section>
+      <HeroSection />
 
       {/* ========================================================================= */}
       {/* SECTION 2: THREE STEPS SECTION                                            */}
