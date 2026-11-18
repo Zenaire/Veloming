@@ -127,10 +127,10 @@ export const Navbar: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-0 min-h-screen h-[100dvh] w-full bg-white z-50 flex flex-col md:hidden overflow-y-auto"
+            className="fixed inset-0 min-h-screen h-[100dvh] w-full bg-[var(--background-bg-primary)] z-50 flex flex-col md:hidden overflow-y-auto font-['Inter',sans-serif]"
           >
             {/* Header Bar: Logo di kiri & Close (X) sejajar di kanan */}
-            <div className="flex items-center justify-between px-6 py-4 h-16 border-b border-gray-100 shrink-0">
+            <div className="flex items-center justify-between px-6 py-4 h-16 border-b border-[var(--border-border-secondary)] shrink-0">
               <Link
                 to="/"
                 onClick={(e) => handleMobileNavClick('/', e)}
@@ -143,15 +143,15 @@ export const Navbar: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="p-2 -mr-2 text-gray-900 hover:text-blue-600 focus:outline-none transition-colors cursor-pointer"
+                className="p-2 -mr-2 text-[var(--text-text-gray-text-primary)] hover:text-[var(--background-bg-brand-solid)] focus:outline-none transition-colors cursor-pointer"
                 aria-label="Tutup Menu Navigasi"
               >
                 <X className="w-6 h-6 stroke-[2]" />
               </button>
             </div>
 
-            {/* Menu List (Apple / Vercel Style: Left-Aligned & Larger Typography) */}
-            <nav className="flex flex-col items-start text-left gap-6 px-6 pt-8">
+            {/* Menu List (Veloming Style + Vercel Layout: Inter, Left-Aligned, 14px Phone / 18px Tablet) */}
+            <nav className="flex flex-col items-start text-left gap-4 sm:gap-5 px-6 pt-6 sm:pt-8">
               {navLinks.map((link, index) => (
                 <motion.div
                   key={link.path}
@@ -163,10 +163,10 @@ export const Navbar: React.FC = () => {
                   <Link
                     to={link.path}
                     onClick={(e) => handleMobileNavClick(link.path, e)}
-                    className={`block w-full text-left text-[28px] sm:text-4xl font-semibold tracking-tight leading-snug transition-colors ${
+                    className={`block w-full text-left py-1 text-[14px] sm:text-[18px] leading-6 tracking-normal transition-colors ${
                       isActive(link.path)
-                        ? 'text-[var(--background-bg-brand-solid)]'
-                        : 'text-gray-900 hover:text-blue-600'
+                        ? 'text-[var(--background-bg-brand-solid)] font-semibold'
+                        : 'text-[var(--text-text-gray-text-primary)] font-medium hover:text-[var(--background-bg-brand-solid)]'
                     }`}
                   >
                     {link.label}
@@ -175,24 +175,24 @@ export const Navbar: React.FC = () => {
               ))}
             </nav>
 
-            {/* Tombol CTA di bagian bawah menu */}
+            {/* Tombol CTA (Mengikuti di atas tepat di bawah menu, tidak ditarik ke bawah layar) */}
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.25, delay: 0.2 }}
-              className="mt-auto px-6 pb-10 pt-8 flex flex-col gap-3"
+              className="mt-6 sm:mt-8 px-6 pb-8 flex flex-col gap-3"
             >
               <Link
                 to="/report"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="inline-flex items-center justify-center w-full h-12 sm:h-14 text-base sm:text-lg font-semibold text-white bg-[var(--background-bg-brand-solid)] hover:bg-[var(--background-bg-brand-solid-hover)] active:scale-[0.98] rounded-full shadow-sm transition-all duration-150"
+                className="inline-flex items-center justify-center w-full h-11 sm:h-12 text-sm sm:text-base font-semibold text-white bg-[var(--background-bg-brand-solid)] hover:bg-[var(--background-bg-brand-solid-hover)] active:scale-[0.98] rounded-full shadow-sm transition-all duration-150"
               >
                 Lapor sekarang
               </Link>
               <Link
                 to="/track"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="inline-flex items-center justify-center w-full h-12 sm:h-14 text-base sm:text-lg font-semibold text-[var(--background-bg-brand-solid)] hover:bg-blue-50/70 border border-[#64A2E0] active:scale-[0.98] rounded-full bg-white transition-all duration-150"
+                className="inline-flex items-center justify-center w-full h-11 sm:h-12 text-sm sm:text-base font-semibold text-[var(--background-bg-brand-solid)] hover:bg-blue-50/70 border border-[#64A2E0] active:scale-[0.98] rounded-full bg-white transition-all duration-150"
               >
                 Lacak laporan
               </Link>
